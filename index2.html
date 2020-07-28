@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KNN</title>
+    <link rel='shortcut icon' type='image' href='nearest.jpg'>
+    <!-- The library is included in this pen's javascript settings, but the following is also possible: -->
+    <script src="https://rawgit.com/StefanieStoppel/d3ML/master/lib/d3ml.min.js"></script>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Helvetica;
+            background-color: #33353d;
+            color: white;
+        }
+        
+        a {
+            color: yellow;
+        }
+        
+        h1 {
+            margin-top: 0.4em;
+            margin-bottom: 0;
+        }
+        
+        p {
+            margin-top: 0.5em;
+        }
+        
+        .center {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="center">K-Nearest Neighbor (KNN)</h1>
+    <p class="center">Click on the grey area to create new circles and see how their color changes based on their neighbors.</p>
+    <div id="knn"></div>
+</body>
+<script src="script2.js"></script>
+
+</html>
