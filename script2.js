@@ -49,5 +49,5 @@ function createRandomData() {
 }
 const data = createRandomData();
 const k = 3;
-const vis = new d3ml.KNNVisualization(data, options, types, k);
+const vis = new d3ml.KNNVisualization([{ x: 1, y: 2, type: 'A' }], options, types, k);
 vis.draw();

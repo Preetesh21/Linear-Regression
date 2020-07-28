@@ -104,19 +104,28 @@ dataPlotCtx.fillText("Click to add some data", 10, 25);
 dataPlot.addEventListener('click', handleClick)
 
 
+function repeat() {
+    let error = costFunction();
+    gradientDescent();
+    drawLine();
+    document.querySelector('#line-eqn').innerHTML = `y = ${(m * 10).toPrecision(4)}x + ${(b * 10).toPrecision(4)}`;
+    document.querySelector('#error').innerHTML = `Current Mean Squared Error: ${error.toPrecision(3)}`;
+    iterations += 1;
+    document.querySelector('#it').innerHTML = iterations;
+}
+
 const runBtn = document.querySelector('#run-btn')
 runBtn.addEventListener('click', () => {
     if (training.length == 0) {
         return document.querySelector('#line-eqn').innerHTML = 'Try adding some data first';
     }
-    let error = costFunction()
-    gradientDescent()
-    drawLine()
-    document.querySelector('#line-eqn').innerHTML = `y = ${(m * 10).toPrecision(4)}x + ${(b * 10).toPrecision(4)}`
-    document.querySelector('#error').innerHTML = `Current Mean Squared Error: ${error.toPrecision(3)}`
-    iterations += 1
-    document.querySelector('#it').innerHTML = iterations
+    while (iterations < 10000) {
+        console.log(iterations);
+        repeat();
+    }
 })
+
+
 
 const clearLinesBtn = document.querySelector('#clear-lines')
 clearLinesBtn.addEventListener('click', clearLines)
