@@ -20,7 +20,7 @@ function costFunction() {
     return avg
 }
 
-function gradientDescent() {
+async function gradientDescent() {
     let deltaB = 0;
     let deltaM = 0;
     // Iterate through training data, and update cost function
@@ -66,7 +66,7 @@ function plotData() {
     }
 }
 
-function drawLine() {
+async function drawLine() {
     let rect = dataPlot.getBoundingClientRect()
     let ctx = dataPlot.getContext('2d');
     let lineStart = convertPoint({ x: 0, y: b * rect.height }, rect)
@@ -77,6 +77,7 @@ function drawLine() {
     ctx.strokeStyle = `rgb(${getRandomInt(0,256)},${getRandomInt(0,256)},${getRandomInt(0,256)})`
     ctx.stroke()
     ctx.closePath();
+    console.log('f')
 }
 
 function clearLines() {
@@ -103,10 +104,11 @@ dataPlotCtx.font = "15px Arial";
 dataPlotCtx.fillText("Click to add some data", 10, 25);
 dataPlot.addEventListener('click', handleClick)
 
-function repeat() {
+async function repeat() {
     let error = costFunction();
-    gradientDescent();
-    drawLine();
+    await gradientDescent();
+    await drawLine();
+
     document.querySelector('#line-eqn').innerHTML = `y = ${(m * 10).toPrecision(4)}x + ${(b * 10).toPrecision(4)}`;
     document.querySelector('#error').innerHTML = `Current Mean Squared Error: ${error.toPrecision(3)}`;
     iterations += 1;
@@ -122,15 +124,15 @@ runBtn.addEventListener('click', () => {
 
 })
 
-function perform() {
+async function perform() {
     let cc = 10;
 
     while (cc > 0) {
         console.log(iterations);
         iterations = iterations + 1;
         cc = cc - 1;
-        repeat();
-        sleep(500)
+        await repeat();
+        await delay(500);
     }
 }
 
@@ -146,11 +148,5 @@ clearAllBtn.addEventListener('click', () => {
     document.querySelector('#line-eqn').innerHTML = ''
 })
 
-function sleep(milliseconds) {
-    var start = new Date().getTime();
-    for (var i = 0; i < 1e7; i++) {
-        if ((new Date().getTime() - start) > milliseconds) {
-            break;
-        }
-    }
-}
+const delay = (duration) =>
+    new Promise(resolve => setTimeout(resolve, duration))
