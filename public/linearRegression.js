@@ -103,7 +103,6 @@ dataPlotCtx.font = "15px Arial";
 dataPlotCtx.fillText("Click to add some data", 10, 25);
 dataPlot.addEventListener('click', handleClick)
 
-
 function repeat() {
     let error = costFunction();
     gradientDescent();
@@ -119,12 +118,21 @@ runBtn.addEventListener('click', () => {
     if (training.length == 0) {
         return document.querySelector('#line-eqn').innerHTML = 'Try adding some data first';
     }
-    while (iterations < 10000) {
-        console.log(iterations);
-        repeat();
-    }
+    perform();
+
 })
 
+function perform() {
+    let cc = 10;
+
+    while (cc > 0) {
+        console.log(iterations);
+        iterations = iterations + 1;
+        cc = cc - 1;
+        repeat();
+        sleep(500)
+    }
+}
 
 
 const clearLinesBtn = document.querySelector('#clear-lines')
@@ -137,3 +145,12 @@ clearAllBtn.addEventListener('click', () => {
     iterations = 0
     document.querySelector('#line-eqn').innerHTML = ''
 })
+
+function sleep(milliseconds) {
+    var start = new Date().getTime();
+    for (var i = 0; i < 1e7; i++) {
+        if ((new Date().getTime() - start) > milliseconds) {
+            break;
+        }
+    }
+}
