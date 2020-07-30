@@ -29,7 +29,6 @@ async function gradientDescent() {
         let y = training[i].y
         let yguess = m * x + b
         let error = y - yguess
-            // 
         deltaB += (1 / training.length) * error;
         deltaM += (1 / training.length) * error * x
     }
@@ -62,6 +61,7 @@ function plotData() {
         let canvasPoint = convertPoint({ x, y }, rect)
         ctx.beginPath()
         ctx.arc(canvasPoint.x, canvasPoint.y, 4, 0, 2 * Math.PI, true)
+        ctx.fillStyle = 'white';
         ctx.fill();
     }
 }
@@ -77,7 +77,6 @@ async function drawLine() {
     ctx.strokeStyle = `rgb(${getRandomInt(0,256)},${getRandomInt(0,256)},${getRandomInt(0,256)})`
     ctx.stroke()
     ctx.closePath();
-    console.log('f')
 }
 
 function clearLines() {
@@ -101,6 +100,7 @@ function getRandomInt(min, max) {
 const dataPlot = document.querySelector('#data-plot')
 dataPlotCtx = dataPlot.getContext('2d')
 dataPlotCtx.font = "15px Arial";
+dataPlotCtx.fillStyle = 'white';
 dataPlotCtx.fillText("Click to add some data", 10, 25);
 dataPlot.addEventListener('click', handleClick)
 
@@ -111,7 +111,6 @@ async function repeat() {
 
     document.querySelector('#line-eqn').innerHTML = `y = ${(m * 10).toPrecision(4)}x + ${(b * 10).toPrecision(4)}`;
     document.querySelector('#error').innerHTML = `Current Mean Squared Error: ${error.toPrecision(3)}`;
-    iterations += 1;
     document.querySelector('#it').innerHTML = iterations;
 }
 
@@ -128,18 +127,14 @@ async function perform() {
     let cc = 10;
 
     while (cc > 0) {
-        console.log(iterations);
         iterations = iterations + 1;
         cc = cc - 1;
         await repeat();
         await delay(500);
     }
 }
-
-
 const clearLinesBtn = document.querySelector('#clear-lines')
 clearLinesBtn.addEventListener('click', clearLines)
-
 const clearAllBtn = document.querySelector('#clear-all')
 clearAllBtn.addEventListener('click', () => {
     clearCanvas(dataPlot)
@@ -147,6 +142,5 @@ clearAllBtn.addEventListener('click', () => {
     iterations = 0
     document.querySelector('#line-eqn').innerHTML = ''
 })
-
 const delay = (duration) =>
     new Promise(resolve => setTimeout(resolve, duration))

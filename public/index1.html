@@ -6,13 +6,13 @@
     <meta charset='UTF-8'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Linear Regression</title>
-    <link rel='shortcut icon' type='image/x-icon' href='1998646.png'>
-    <link rel='stylesheet' href="style.css">
+    <link rel='shortcut icon' type='image/x-icon' href='assests/1998646.png'>
+    <link rel='stylesheet' href="static/styles/style.css">
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="index.html"><img src="cropped-favicon.png" width="40px" height="40px">Algo-visualiser</a>
+    <nav class="navbar navbar-expand-lg navbar-inverse bg-dark">
+        <a class="navbar-brand" href="index.html"><img src="assests/cropped-favicon.png" width="40px" height="40px">Algo-visualiser</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -26,6 +26,7 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="#">Linear Regression</a>
                         <a class="dropdown-item" href="index2.html">K-nearest nieghbours</a>
+                        <a class="dropdown-item" href="index3.html">K-means</a>
                     </div>
                 </li>
             </ul>
@@ -36,22 +37,25 @@
 
     <div>
         <center>
-            <p>Data Plot with visualisation of the Cost Function (mean squared error).</p>
+            <h2>Linear Regression</h2>
+            <p>Data Plot with visualisation of the Regression Line (mean squared error).</p>
 
             <div id="canvascontainer" display='inline'>
-                <canvas width="400" height="400" style='border:1px solid black' id="data-plot"></canvas>
+                <canvas width="800" height="600" style='border:1px solid black; background-color:black' id="data-plot"></canvas>
             </div>
 
             <div id="line-eqn"></div>
             <div id="error"></div>
             <p>Learning Rate:<input id="lrslider" type="range" min="0" max="0.5" step="0.00001"><span id="lr"></span></p>
             <p>No. of Iterations: <span id="it"></span></p>
-            <button id="run-btn">Run</button><button id="clear-lines">Clear Lines</button>
-            <button id="clear-all">Clear All</button>
+            <button class="btn btn-primary" style="margin: 1em;" id="run-btn">Run</button><button class="btn btn-primary" id="clear-lines">Clear Lines</button>
+            <button class="btn btn-primary" style="margin: 1em;" id="clear-all">Clear All</button>
         </center>
     </div>
 </body>
-<script src="linearRegression.js"></script>
+
+
+<script src="static/js/linearRegression.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>K-means algorithm visualization</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link rel='shortcut icon' type='image/x-icon' href='assests/favicon_k.png'>
+    <link rel="stylesheet" href="static/styles/style.css">
+</head>
+
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-inverse bg-dark">
+        <a class="navbar-brand" href="index.html"><img src="assests/cropped-favicon.png" width="40px" height="40px">Algo-visualiser</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Algorithms
+              </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="index1.html">Linear Regression</a>
+                        <a class="dropdown-item" href="index2.html">K-nearest nieghbours</a>
+                        <a class="dropdown-item" href="#">K-Means</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <center>
+        <h1>Two-dimensional visualization of k-means clustering algorithm</h1>
+        <canvas width="800" height="600"></canvas>
+        <div class="controls">
+            <dl class="controls-group">
+                <dt>Data points</dt>
+                <br>
+                <dd><button class="btn btn-primary" id="add-data-points-randomly">Add randomly</button> <input id="add-data-points-randomly-count" value="100"> data point(s)</dd>
+                <dd><button class="btn btn-primary" id="remove-all-data-points">Remove all</button></dd>
+            </dl>
+            <dl class="controls-group">
+                <dt>Centroids</dt>
+                <dd><button class="btn btn-primary" id="add-centroids-manually" data-toggle="Turn off adding manually">Add manually</button></dd>
+                <dd><button class="btn btn-primary" id="add-centroids-randomly">Add randomly</button> <input id="add-centroids-randomly-count" value="3"> centroid(s)</dd>
+                <dd><button class="btn btn-primary" id="remove-all-centroids">Remove all</button></dd>
+            </dl>
+            <dl class="controls-group">
+                <dt>Algorithm</dt>
+                <br>
+                <dd>1. <button class="btn btn-primary" id="reassign-data-points">Run</button></dd>
+                <dd>2. <button class="btn btn-primary" id="update-centroids-positions">Centroids' positions</button></dd>
+            </dl>
+        </div>
+    </center>
+
+
+</body>
+<script src="static/js/k-means.js"></script>
+
+</html>

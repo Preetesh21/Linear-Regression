@@ -2,7 +2,6 @@ const displayWidth = window.innerWidth - 25;
 const displayHeight = 450;
 const dataSetSize = 250;
 const options = {
-    // rootNode: '#knn',
     width: displayWidth,
     height: displayHeight,
     backgroundColor: 'black',
@@ -51,3 +50,5 @@ const data = createRandomData();
 const k = 3;
 const vis = new d3ml.KNNVisualization(data, options, types, k);
 vis.draw();
+var c = document.body.children;
+c[5].style.maxWidth = "100%";

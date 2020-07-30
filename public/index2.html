@@ -6,19 +6,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KNN</title>
-    <link rel='shortcut icon' type='image/x-icon' href='nearest.jpg'>
+    <link rel='shortcut icon' type='image/x-icon' href='assests/nearest.jpg'>
     <!-- The library is included in this pen's javascript settings, but the following is also possible: -->
     <script src="https://rawgit.com/StefanieStoppel/d3ML/master/lib/d3ml.min.js"></script>
-    <style>
-        .center {
-            text-align: center;
-        }
-    </style>
+    <link rel='stylesheet' href="static/styles/style.css">
 </head>
 
+
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="index.html"><img src="cropped-favicon.png" width="40px" height="40px">Algo-visualiser</a>
+    <nav class="navbar navbar-expand-lg navbar-inverse bg-dark">
+        <a class="navbar-brand" href="index.html"><img src="assests/cropped-favicon.png" width="40px" height="40px">Algo-visualiser</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -32,19 +29,19 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="index1.html">Linear Regression</a>
                         <a class="dropdown-item" href="#">K-nearest nieghbours</a>
+                        <a class="dropdown-item" href="index3.html">K-means</a>
                     </div>
                 </li>
             </ul>
         </div>
     </nav>
-
-
-
     <h1 class="center">K-Nearest Neighbor (KNN)</h1>
-    <p class="center">Click on the grey area to create new circles and see how their color changes based on their neighbors.</p>
+    <p class="center">Click on the black area to create new circles and see how their color changes based on their neighbors.</p>
     <div id="knn"></div>
 </body>
-<script src="script2.js"></script>
+
+
+<script src="static/js/knn.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>

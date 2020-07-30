@@ -1,0 +1,181 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: #03396c;
+}
+
+.center {
+    text-align: center;
+}
+
+#weighted {
+    display: none;
+}
+
+#weighted-label {
+    display: none;
+}
+
+.settings__group {
+    padding-top: 1em;
+    text-align: center;
+    color: aliceblue;
+}
+
+p {
+    color: aliceblue;
+}
+
+wrap {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+#blurb {
+    text-align: center;
+    width: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+}
+
+.line-reveal {
+    width: 120%;
+    height: 3px;
+    overflow: hidden;
+    position: absolute;
+}
+
+.overlay {
+    background: #03396c;
+    height: 10px;
+    position: absolute;
+    top: -5px;
+    width: 100%;
+    transform-origin: 100% 0;
+    animation: wipe 3s ease;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+
+.line1,
+.line2,
+.line3 {
+    border: 3px dashed white;
+    backface-visibility: hidden;
+}
+
+#line-a {
+    left: 0;
+    top: 60%;
+    transform-origin: 0 0;
+    transform: rotate(-50deg);
+}
+
+.line1 {
+    border-color: #ff9900;
+}
+
+#line-b {
+    left: 0;
+    bottom: 20%;
+    transform-origin: 0 0;
+    transform: rotate(-5deg);
+}
+
+.overlay {
+    animation-delay: .5s;
+}
+
+.line2 {
+    border-color: #ff0099;
+}
+
+#line-c {
+    right: 10%;
+    bottom: 0;
+    transform-origin: 100% 0;
+    transform: rotate(70deg);
+}
+
+.overlay {
+    animation-delay: 1s;
+}
+
+.line3 {
+    border-color: #0099ff;
+}
+
+@keyframes wipe {
+    to {
+        transform: scaleX(0);
+    }
+}
+
+.navbar {
+    z-index: 9999
+}
+
+h1 {
+    padding-top: 1vw;
+    font-size: 28px;
+    text-align: center;
+    color: aliceblue;
+}
+
+dl {
+    color: aliceblue;
+}
+
+.controls {
+    display: flex;
+    columns: 3;
+    align-items: center;
+    justify-content: space-around;
+    margin: 2em;
+}
+
+.controls-group {
+    border: #333;
+    border-radius: 2px;
+    border: 4px solid black;
+    padding: 10px;
+    border-radius: 1px;
+    height: 240px;
+    width: 19vw;
+}
+
+button {
+    margin-top: 0.5vw;
+}
+
+canvas {
+    border: 1px solid black;
+}
+
+#add-data-points-randomly-count {
+    width: 50px;
+}
+
+#add-centroids-randomly-count {
+    width: 30px;
+}
+
+.top-division:before {
+    content: '';
+    display: block;
+    margin-top: 10px;
+    border-top: 1px solid #333;
+    padding-top: 10px;
+}
+
+canvas {
+    background-color: black;
+}
