@@ -6,14 +6,49 @@
     <title>K-means algorithm visualization</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <link rel='shortcut icon' type='image/x-icon' href='assests/favicon_k.png'>
     <link rel="stylesheet" href="static/styles/style.css">
+    <script>
+        $(document).ready(function() {
+            $("#exampleModalCenter").modal('show');
+        });
+    </script>
 </head>
 
-
 <body>
+
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Directions</h5>
+
+
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h3>K-Means explained:-</h3>
+                    <h6>k-means clustering is a method of vector quantization, originally from signal processing, that aims to partition n observations into k clusters in which each observation belongs to the cluster with the nearest mean, serving as a prototype
+                        of the cluster.</h6>
+                    <h4>
+                        <ul>
+                            <li>Data Poinst--These can be added on mouse click on the canvas,randomly with the quantity specified.</li>
+                            <li>Centrois--These can be added on mouse click on the canvas,randomly with the quantity specified.(max limit being 10)</li>
+                            <li>Algorithm--Here on clicking the RUN buttont the algo runs and classifies the data points into of the classes and CENTROID-POSITIOM when clicked modifies the poisition of the centre.</li>
+                        </ul>
+                    </h4>
+                </div>
+                <div class="modal-footer">
+                    <center>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </div>
     <nav class="navbar navbar-expand-lg navbar-inverse bg-dark">
         <a class="navbar-brand" href="index.html"><img src="assests/cropped-favicon.png" width="40px" height="40px">Algo-visualiser</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
