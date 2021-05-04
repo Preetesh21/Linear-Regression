@@ -2,25 +2,24 @@
 <html lang="en">
 
 <head>
+    <!-- CSS only -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <meta charset="UTF-8">
+    <meta charset='UTF-8'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KNN</title>
-    <link rel='shortcut icon' type='image/x-icon' href='assests/nearest.jpg'>
-    <!-- The library is included in this pen's javascript settings, but the following is also possible: -->
-    <script src="https://rawgit.com/StefanieStoppel/d3ML/master/lib/d3ml.min.js"></script>
+    <link rel='icon' type='image/x-icon' href='assests/cropped-favicon.png'>
+    <title>Visualise!</title>
+
     <link rel='stylesheet' href="static/styles/style.css">
 </head>
 
-
 <body>
     <nav class="navbar navbar-expand-lg navbar-inverse bg-dark">
-        <a class="navbar-brand" href="index.html"><img src="assests/cropped-favicon.png" width="40px" height="40px">Algo-visualiser</a>
+        <a class="navbar-brand" href="#"><img src="assests/cropped-favicon.png" width="40px" height="40px">Algo-visualiser</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse" style="color: wheat;" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -28,20 +27,40 @@
               </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="index1.html">Linear Regression</a>
-                        <a class="dropdown-item" href="#">K-nearest nieghbours</a>
+                        <a class="dropdown-item" href="index2.html">K-nearest nieghbours</a>
                         <a class="dropdown-item" href="index3.html">K-means</a>
                     </div>
                 </li>
             </ul>
         </div>
     </nav>
-    <h1 class="center">K-Nearest Neighbor (KNN)</h1>
-    <p class="center">Click on the black area to create new circles and see how their color changes based on their neighbors.</p>
-    <div id="knn"></div>
+    <div id="wrap">
+
+        <div id="blurb">
+            <h2>Welcome to Algo-Visualiser</h2>
+            <p>Analyse your data with various algorithms!</p>
+        </div>
+
+        <div class="line-reveal" id="line-a">
+            <div class="overlay"></div>
+            <div class="line1"></div>
+        </div>
+
+        <div class="line-reveal" id="line-b">
+            <div class="overlay"></div>
+            <div class="line2"></div>
+        </div>
+
+        <div class="line-reveal" id="line-c">
+            <div class="overlay"></div>
+            <div class="line3"></div>
+        </div>
+
+    </div>
 </body>
 
 
-<script src="static/js/knn.js"></script>
+<!-- JS, Popper.js, and jQuery -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
